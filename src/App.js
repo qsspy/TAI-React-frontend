@@ -3,17 +3,14 @@ import './global-styles/reset.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import './global-styles/topography.css'
 import './global-styles/App.css';
-import CategoryList from './components/CategoryList/CategoryList'
-import ProductList from './components/ProductList/ProductList';
 import React from 'react'
 import Header from './components/Header/Header'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import Shop from './components/Shop/Shop';
+import ProductDetails from './components/ProductDetails/ProductDetails';
 
 
 export default class App extends React.Component {
-
-  state = {
-    categoryId: 0
-  }
 
   render() {
     return (
@@ -23,14 +20,15 @@ export default class App extends React.Component {
           <Header />
         </div>
         <div className="sub-body container bg-void py-3">
-          <CategoryList onCategorySelect={(id) => this.handleChangedCategory(id)} />
-          <ProductList key={this.state.categoryId} categoryId={this.state.categoryId} />
+          <Router>
+            <Switch>
+              <Route path="/shop" exact component={Shop}></Route>
+              <Route path="/product/:id" component={ProductDetails}></Route>
+              <Redirect to="/shop"></Redirect>
+            </Switch>
+          </Router>
         </div>
       </div>
     );
-  }
-
-  handleChangedCategory(id) {
-    this.setState({ categoryId: id })
   }
 }

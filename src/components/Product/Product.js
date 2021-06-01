@@ -4,6 +4,7 @@ import styles from './Product.module.css';
 import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Product = (props) => {
 
@@ -17,10 +18,12 @@ const Product = (props) => {
       <h3>{product.name}</h3>
       <h4>{parseFloat(product.price).toFixed(2)}zł</h4>
       <p>{product.shortDescription}</p>
-      <Button variant="secondary">
-        <FontAwesomeIcon icon={faShoppingBasket} className="mr-2"/>
-        Kup Teraz
-      </Button>
+      <Link to={`/product/${product.id}`}>
+        <Button variant="secondary">
+          <FontAwesomeIcon icon={faShoppingBasket} className="mr-2" />
+          Kup Teraz
+        </Button>
+      </Link>
     </div>
   )
 };
