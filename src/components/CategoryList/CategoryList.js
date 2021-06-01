@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './CategoryList.module.css';
 import axios from 'axios';
 import { env } from '../../environment';
@@ -38,7 +37,7 @@ export default class CateroryList extends React.Component {
 
     if(this.state.categories.length != 0) {
       return (
-        <ul className="d-flex flex-wrap justify-content-center">
+        <ul className={"d-flex flex-wrap justify-content-center " + styles['category-list']}>
           {this.state.categories.map(category =>
              {
                if(category.selected) {

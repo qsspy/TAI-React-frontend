@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './Shop.module.css';
 import CategoryList from '../CategoryList/CategoryList';
 import ProductList from '../ProductList/ProductList';
 

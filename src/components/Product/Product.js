@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './Product.module.css';
 import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,8 +9,12 @@ const Product = (props) => {
 
   const product = props.product
 
+  const isDiscount = product.discountPercent != null && product.discountPercent != 0
+  const discount = product.discountPercent
+
   return (
     <div className={"bg-white d-flex flex-column align-items-center m-3 p-3 " + styles.main__container}>
+      {isDiscount ? <div className={styles.discount}>-{discount*100}%</div> : null}
       <div className={"mb-2 " + styles.img__container}>
         <img src={'data:image/png;base64,' + product.image} className={styles.product__image}></img>
       </div>
