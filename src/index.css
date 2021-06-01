@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.body {
+  background-image: url('./bg.png');
+  border: 3px solid transparent;
+}
+
+.sub-body {
+  -webkit-box-shadow: 1px 0px 15px -5px rgba(0,0,0,0.5); 
+    box-shadow: 1px 0px 15px -5px rgba(0,0,0,0.5);
+    margin-bottom: 40px;
+    
+}
+
+.header {
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 0px 15px -5px rgba(0,0,0,0.5); 
+    box-shadow: 1px 0px 15px -5px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+    padding: 10px 0;
+}

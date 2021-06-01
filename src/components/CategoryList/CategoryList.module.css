@@ -1,0 +1,21 @@
+ul {
+    background-color: #393D46;
+}
+
+li {
+    color : white;
+    transition: all 0.5s ease-in-out;
+    font-family: monospace,sans-serif;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.selected {
+    color: #393D46;
+    background-color: white;
+}
+
+li:hover {
+    color: #393D46;
+    background-color: white;
+}
