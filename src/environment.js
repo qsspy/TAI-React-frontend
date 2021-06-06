@@ -1,3 +1,3 @@
 export const env = {
-    serverUrl: 'http://localhost:8081'
+    serverUrl: 'https://tai-backend.herokuapp.com'
 }
